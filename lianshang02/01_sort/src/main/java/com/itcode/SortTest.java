@@ -13,11 +13,13 @@ public class SortTest {
 
     public static void main(String[] args) {
         System.out.println("---------------test integer-------------------");
-        Integer[] random = Integers.random(10000, 1, 1000000);
-        testSort(random, new BubbleSort1<Integer>(), new BubbleSort2<Integer>(),
-                new BubbleSort3<Integer>(), new SelectionSort<Integer>(),
-                new HeapSort<Integer>(), new InsertionSort1(),
-                new InsertionSort2());
+        Integer[] random = Integers.random(100000, 1, 1000000);
+        testSort(random,
+//                new BubbleSort1<Integer>(), new BubbleSort2<Integer>(),new BubbleSort3<Integer>(),
+//                new SelectionSort<Integer>(),
+                  new HeapSort<Integer>(),
+//                  new InsertionSort1(), new InsertionSort2(), new InsertionSort3(),
+                new MergeSort<>());
 //        System.out.println("---------------test student-------------------");
 //        Student[] students = {new Student(90, 18), new Student(80, 21), new Student(100, 16)};
 //        testSort(students, new BubbleSort3<Student>(), new SelectionSort<Student>(), new HeapSort<Student>());

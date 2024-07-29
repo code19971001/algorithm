@@ -11,16 +11,12 @@ package com.itcode.sorts;
  */
 public class InsertionSort2<E extends Comparable<E>> extends Sort<E> {
 
-    @Override
-    protected void sort() {
-        insertionSort2();
-    }
-
     /**
      * 优化1：将"交换"转为"挪动"，备份待插入元素，将比待插入元素大的元素往后挪动。
      * **如果逆序对越多，优化就越明显**.
      */
-    private void insertionSort2() {
+    @Override
+    protected void sort() {
         for (int begin = 1; begin < arr.length; begin++) {
             int cur = begin;
             E insertionVal = arr[cur];
@@ -32,5 +28,6 @@ public class InsertionSort2<E extends Comparable<E>> extends Sort<E> {
             arr[cur] = insertionVal;
         }
     }
+
 
 }

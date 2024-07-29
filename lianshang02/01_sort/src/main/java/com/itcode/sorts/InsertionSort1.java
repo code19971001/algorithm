@@ -13,10 +13,6 @@ public class InsertionSort1<E extends Comparable<E>> extends Sort<E> {
 
     @Override
     protected void sort() {
-        insertionSort1();
-    }
-
-    private void insertionSort1() {
         for (int begin = 1; begin < arr.length; begin++) {
             int cur = begin;
             while (cur > 0 && cmp(cur, cur - 1) < 0) {
@@ -25,5 +21,6 @@ public class InsertionSort1<E extends Comparable<E>> extends Sort<E> {
             }
         }
     }
+
 
 }
