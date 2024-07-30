@@ -36,6 +36,8 @@ public class QuickSort<E extends Comparable<E>> extends Sort<E> {
 
     /**
      * 将轴点元素放入最终位置
+     * 为什么相等也进行替换? 如果值一样依旧可以切割数列.
+     * 如果相等不替换会出现什么问题？？如果值重复率非常高会变成最坏的情况O(n^2)
      */
     private int getPivotIndex(int begin, int end) {
         //为了避免最坏的情况出现，我们每次都随机一个位置和begin进行交换
