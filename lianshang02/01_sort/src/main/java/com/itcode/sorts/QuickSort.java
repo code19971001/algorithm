@@ -1,9 +1,12 @@
 package com.itcode.sorts;
 
+import java.util.Random;
+
 /**
  * 快速排序: 逐渐将每一个元素都转化为轴点, 一旦所有的元素都转换为轴点, 那就已经排好顺序.
  * 最好时间复杂度: O(nlogn), 轴点左右元素数量比较均匀的情况下
  * 最坏时间复杂度: O(n^2)
+ * 是一个不稳定的排序方法
  * <p>
  * 平均时间复杂度推到:
  * T(n) = 2 * T(n/2) + O(n)
@@ -35,6 +38,8 @@ public class QuickSort<E extends Comparable<E>> extends Sort<E> {
      * 将轴点元素放入最终位置
      */
     private int getPivotIndex(int begin, int end) {
+        //为了避免最坏的情况出现，我们每次都随机一个位置和begin进行交换
+        swap(begin, begin + new Random().nextInt(end-begin));
         E pivotVal = arr[begin];
         //默认反向
         boolean reverse = true;
