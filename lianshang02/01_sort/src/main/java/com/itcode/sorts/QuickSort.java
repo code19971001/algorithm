@@ -26,6 +26,7 @@ public class QuickSort<E extends Comparable<E>> extends Sort<E> {
 
     private void sort(int begin, int end) {
         if (end - begin < 2) {
+            //只有一个元素
             return;
         }
         //确定轴点元素的位置
@@ -40,7 +41,7 @@ public class QuickSort<E extends Comparable<E>> extends Sort<E> {
      * 如果相等不替换会出现什么问题？？如果值重复率非常高会变成最坏的情况O(n^2)
      */
     private int getPivotIndex(int begin, int end) {
-        //为了避免最坏的情况出现，我们每次都随机一个位置和begin进行交换
+        //为了避免最坏的情况出现，我们每次都随机一个位置和begin进行交换,
         swap(begin, begin + new Random().nextInt(end-begin));
         E pivotVal = arr[begin];
         //默认反向
